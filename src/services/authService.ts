@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 import { exchangeCodeForToken, getLinkedInProfile, getLinkedInEmail } from '../config/oauth';
 import { UserService } from './userService';
 import { OAuthError, NotFoundError, AuthenticationError } from '../helpers/errors';
-import { generateToken, verifyToken } from '../helpers/jwt';
+import { generateToken, verifyToken, DecodedToken } from '../helpers/jwt';
 import { ErrorCode, CONFIG } from '../constants';
 
 const prisma = new PrismaClient();
@@ -100,7 +100,7 @@ export class AuthService {
   /**
    * Validate session and get session data
    */
-  static async validateSession(token: string) {
+  static async validateSession(token: string): Promise<DecodedToken> {
     try {
       const decoded = verifyToken(token);
 
