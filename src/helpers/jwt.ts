@@ -7,12 +7,12 @@ import jwt, { SignOptions } from 'jsonwebtoken';
 import { CONFIG } from '../constants';
 import { AuthenticationError } from './errors';
 
-interface TokenPayload {
+export interface TokenPayload {
   userId: string;
   email?: string;
 }
 
-interface DecodedToken extends TokenPayload {
+export interface DecodedToken extends TokenPayload {
   iat: number;
   exp: number;
 }
