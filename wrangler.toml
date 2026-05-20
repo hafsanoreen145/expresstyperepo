@@ -1,10 +1,10 @@
 name = "expressjs-oauth-linkedin"
 compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 
-# Main entry point
-main = "dist/index.js"
+# NOTE: Express.js is not compatible with Cloudflare Workers
+# Use Docker + Railway/Render for deployment instead
+# See DEPLOYMENT.md for instructions
 
 # Uncomment and configure for production deployment
 # account_id = "your_account_id"
