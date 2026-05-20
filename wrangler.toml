@@ -1,7 +1,9 @@
 name = "expressjs-oauth-linkedin"
-type = "javascript"
 compatibility_date = "2024-01-01"
 workers_dev = true
+
+# Main entry point
+main = "dist/server.js"
 
 # Uncomment and configure for production deployment
 # account_id = "your_account_id"
@@ -11,27 +13,19 @@ workers_dev = true
 # Environment variables stored in Cloudflare Secrets
 [env.development]
 name = "expressjs-oauth-linkedin-dev"
-
-[[env.development.vars]]
-NODE_ENV = "development"
+vars = { NODE_ENV = "development" }
 
 [env.production]
 name = "expressjs-oauth-linkedin-prod"
+vars = { NODE_ENV = "production" }
 # Uncomment and configure:
 # route = "api.yourdomain.com/*"
 # zone_id = "your_zone_id"
-
-[[env.production.vars]]
-NODE_ENV = "production"
 
 # Build configuration
 [build]
 command = "npm run build"
 cwd = "./"
-main = "src/server.ts"
-
-[build.upload]
-format = "service-worker"
 
 # Database binding (optional, for Cloudflare D1 if using SQLite)
 # [[d1_databases]]
