@@ -4,7 +4,7 @@ export const linkedinConfig = {
   redirectUri: process.env.LINKEDIN_REDIRECT_URI || 'http://localhost:8080/api/auth/linkedin/callback',
   authorizationUrl: 'https://www.linkedin.com/oauth/v2/authorization',
   accessTokenUrl: 'https://www.linkedin.com/oauth/v2/accessToken',
-  profileUrl: 'https://api.linkedin.com/v2/me',
+  profileUrl: 'https://api.linkedin.com/v2/userinfo',
   emailUrl: 'https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))',
   scope: 'openid profile email',
 };
