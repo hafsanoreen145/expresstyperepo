@@ -13,6 +13,21 @@ export interface LinkedInProfile {
   email?: string;
 }
 
+// OpenID Connect userinfo response format
+export interface LinkedInUserInfo {
+  sub: string;
+  email: string;
+  email_verified: boolean;
+  name: string;
+  given_name: string;
+  family_name: string;
+  picture: string;
+  locale?: {
+    country: string;
+    language: string;
+  };
+}
+
 export interface LinkedInTokenResponse {
   access_token: string;
   refresh_token?: string;
